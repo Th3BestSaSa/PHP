@@ -16,6 +16,6 @@ Para ejecutar los archivos necesitas:
 - Servidor web (Apache / Nginx) o servidor local
 - Navegador web
 
-Opcional:
-- XAMPP / Laragon / WAMP
-- Visual Studio Code u otro editor
+Usado:
+- XAMPP
+- Visual Studio Code
