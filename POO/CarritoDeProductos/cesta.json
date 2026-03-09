@@ -1,0 +1,27 @@
+[
+    {
+        "codigo": "P01",
+        "nombre": "Port\u00e1til XXYY",
+        "precio": 800
+    },
+    {
+        "codigo": "P02",
+        "nombre": "Rat\u00f3n ZZYY",
+        "precio": 18
+    },
+    {
+        "codigo": "P03",
+        "nombre": "Teclado AABB",
+        "precio": 40
+    },
+    {
+        "codigo": "P04",
+        "nombre": "Teclado CCDD",
+        "precio": 50
+    },
+    {
+        "codigo": "P05",
+        "nombre": "Monitor XXCD",
+        "precio": 400
+    }
+]

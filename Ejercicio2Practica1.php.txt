@@ -1,0 +1,71 @@
+<html>
+    <body>
+<?php
+$productos = [
+    ["nombre" => "Camiseta", "precio" => 15.99, "stock" => 10],
+    ["nombre" => "Pantalón", "precio" => 35.5, "stock" => 0],
+    ["nombre" => "Zapatos", "precio" => 55.0, "stock" => 5],
+    ["nombre" => "Gorra", "precio" => 12.0, "stock" => 20],
+];
+
+// =========================
+// MOSTRAR PRODUCTOS CON STOCK > 0
+// =========================
+echo "<h2 style='text-align:center;'>Productos con stock disponible</h2>";
+echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse:collapse; margin:auto; text-align:center;'>";
+echo "<tr style='background-color:#f2f2f2;'>
+        <th>Nombre</th>
+        <th>Precio (€)</th>
+        <th>Stock</th>
+        <th>Valor Total (€)</th>
+      </tr>";
+
+$totalInventario = 0;
+
+foreach ($productos as $producto) {
+    if ($producto['stock'] > 0) {
+        $valorProducto = $producto['precio'] * $producto['stock'];
+        $totalInventario += $valorProducto;
+
+        echo "<tr>
+                <td>{$producto['nombre']}</td>
+                <td>" . number_format($producto['precio'], 2) . "</td>
+                <td>{$producto['stock']}</td>
+                <td>" . number_format($valorProducto, 2) . "</td>
+              </tr>";
+    }
+}
+
+echo "<tr style='font-weight:bold; background-color:#e0e0e0;'>
+        <td colspan='3'>Valor total del inventario</td>
+        <td>" . number_format($totalInventario, 2) . "</td>
+      </tr>";
+echo "</table>";
+
+// =========================
+// ORDENAR POR PRECIO DE MAYOR A MENOR
+// =========================
+usort($productos, function($a, $b) {
+    return $b['precio'] <=> $a['precio']; // Orden descendente
+});
+
+echo "<h2 style='text-align:center; margin-top:30px;'>Productos ordenados por precio (de mayor a menor)</h2>";
+echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse:collapse; margin:auto; text-align:center;'>";
+echo "<tr style='background-color:#f2f2f2;'>
+        <th>Nombre</th>
+        <th>Precio (€)</th>
+        <th>Stock</th>
+      </tr>";
+
+foreach ($productos as $producto) {
+    echo "<tr>
+            <td>{$producto['nombre']}</td>
+            <td>" . number_format($producto['precio'], 2) . "</td>
+            <td>{$producto['stock']}</td>
+          </tr>";
+}
+
+echo "</table>";
+?>
+ </body>
+</html>

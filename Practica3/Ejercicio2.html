@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ejercicio 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Información de usuario</h2>
+        <form action="Ejercicio2.php" method="POST">
+            <label>Nombre de Usuario</label>
+            <input type="text" name="nombre" required/>
+            <br>
+            <label>Estado Civil</label>
+            <input type="radio" name="estado" id="soltero" checked/><label>Soltero</label>
+            <input type="radio" name="estado" id="casado"/><label>Casado</label>
+            <input type="radio" name="estado" id="divorciado"/><label>Divorciado</label>
+            <br>
+            <label>Fecha de Nacimiento</label>
+            <input type="date" name="nacimmiento" required/>
+            <br>
+            <label>¿Tiene Hijos?</label>
+            <input type="checkbox" name="hijos" />
+            <br>
+            <button type="submit">Enviar</button>
+
+        </form>
+    </body>
+</html>

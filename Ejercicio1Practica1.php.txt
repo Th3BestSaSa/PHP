@@ -1,0 +1,59 @@
+<html>
+    <body>
+<?php
+// ============================
+// CONSTANTES
+// ============================
+
+// Rango de números
+define("INICIO", 1);
+define("FIN", 1000);
+
+// Número de columnas de la tabla
+define("COLUMNAS", 7);
+
+// Colores alternos de las celdas (puedes cambiarlos fácilmente)
+define("COLOR1", "#FFD966"); // Amarillo claro
+define("COLOR2", "#9DC3E6"); // Azul claro
+
+// ============================
+// TÍTULO
+// ============================
+echo "<h2 style='text-align:center;'>Números entre 1 y 1000 múltiplos de 5 pero no de 4</h2>";
+
+// ============================
+// TABLA
+// ============================
+echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse:collapse; margin:auto; text-align:center;'>";
+
+$contador = 0; // Controla las columnas y alternancia de color
+
+for ($i = INICIO; $i <= FIN; $i++) {
+    // Condición: múltiplos de 5 pero no de 4
+    if ($i % 5 == 0 && $i % 4 != 0) {
+
+        // Abrir una nueva fila si estamos al inicio de una
+        if ($contador % COLUMNAS == 0) {
+            echo "<tr>";
+        }
+
+        // Alternar colores de fondo
+        $color = ($contador % 2 == 0) ? COLOR1 : COLOR2;
+
+        // Imprimir celda con color correspondiente
+        echo "<td style='background-color:$color;'>$i</td>";
+
+        $contador++;
+
+        // Cerrar fila si llegamos al número de columnas definido
+        if ($contador % COLUMNAS == 0) {
+            echo "</tr>";
+        }
+    }
+}
+
+// Cerrar tabla
+echo "</table>";
+?>
+  </body>
+</html>
